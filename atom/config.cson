@@ -1,0 +1,37 @@
+"*":
+  "api-blueprint-preview":
+    liveUpdate: false
+  "atom-beautify":
+    executables:
+      php:
+        path: "php"
+      "php-cs-fixer":
+        path: "php-cs-fixer"
+    general:
+      _analyticsUserId: "7f44d6a7-fe72-4db5-8ac5-6eaf4863d80b"
+      loggerLevel: "info"
+      showLoadingView: false
+    markdown:
+      beautify_on_save: true
+    php:
+      allow_risky: "yes"
+      beautify_on_save: true
+      cs_fixer_config_file: "/home/jefferson/.php-cs.dist"
+  "browser-plus": {}
+  core:
+    autoHideMenuBar: true
+    excludeVcsIgnoredPaths: false
+    telemetryConsent: "limited"
+  editor:
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "d0e7c812-344e-436d-b82b-979be7a34896"
+  "highlight-selected":
+    hideHighlightOnSelectedWord: true
+    ignoreCase: true
+  "linter-php": {}
+  welcome:
+    showOnStartup: false
