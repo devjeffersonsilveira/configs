@@ -1,11 +1,15 @@
-if [ ! -f $HOME/.zsh_plugins/antigen.zsh ]; then
-    if [ ! -d $HOME/.zsh_plugins ]; then
-        mkdir -p $HOME/.zsh_plugins
+if [ ! -d $HOME/.configus ]; then
+    mkdir -p $HOME/.configus
+fi
+if [ ! -f $HOME/.configus/.zsh_plugins/antigen.zsh ]; then
+    if [ ! -d $HOME/.configus/.zsh_plugins ]; then
+        mkdir -p $HOME/.configus/.zsh_plugins
     fi
-    curl -L git.io/antigen > $HOME/.zsh_plugins/antigen.zsh
+    curl -L git.io/antigen > $HOME/.configus/.zsh_plugins/antigen.zsh
 fi
 
-source $HOME/.zsh_plugins/antigen.zsh
+source $HOME/.configus/aliases.zsh
+source $HOME/.configus/.zsh_plugins/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
