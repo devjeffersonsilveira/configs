@@ -9,6 +9,7 @@ if [ ! -f $HOME/.configus/.zsh_plugins/antigen.zsh ]; then
 fi
 
 source $HOME/.configus/aliases.zsh
+source $HOME/.configus/functions.zsh
 source $HOME/.configus/.zsh_plugins/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
