@@ -1,2 +1,5 @@
 #!/bin/bash
-cp ./.configus $HOME
+if [[ ! -d $HOME/.configus ]]; then
+    mkdir $HOME/.configus
+fi
+cp -r ./.configus/. $HOME/.configus
