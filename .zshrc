@@ -7,6 +7,11 @@ if [ ! -f $HOME/.configus/.zsh_plugins/antigen.zsh ]; then
     fi
     curl -L git.io/antigen > $HOME/.configus/.zsh_plugins/antigen.zsh
 fi
+if [ ! -d $HOME/.npm-global ]; then
+    mkdir -p $HOME/.npm-global
+fi
+npm config set prefix '~/.npm-global'
+export PATH=~/.npm-global/bin:$PATH
 
 source $HOME/.configus/aliases.zsh
 source $HOME/.configus/functions.zsh
