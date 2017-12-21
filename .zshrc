@@ -12,6 +12,8 @@ if [ ! -d $HOME/.npm-global ]; then
 fi
 npm config set prefix '~/.npm-global'
 export PATH=~/.npm-global/bin:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
+
 
 source $HOME/.configus/aliases.zsh
 source $HOME/.configus/functions.zsh
