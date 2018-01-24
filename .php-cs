@@ -10,7 +10,7 @@ return PhpCsFixer\Config::create()
         'braces' => true,
         'class_definition' => true,
         'combine_consecutive_unsets' => true,
-        'concat_space' => [ 'spacing' => 'one' ],
+        'concat_space' => ['spacing' => 'one'],
         'declare_equal_normalize' => true,
         'elseif' => true,
         'encoding' => true,
@@ -51,7 +51,7 @@ return PhpCsFixer\Config::create()
         'phpdoc_order' => true,
         'phpdoc_types' => true,
         'psr4' => true, //  Class names should match the file name.
-        'return_type_declaration'=>true,
+        'return_type_declaration' => true,
         'semicolon_after_instruction' => true,
         'single_blank_line_at_eof' => true,
         'single_class_element_per_statement' => ['property'],
