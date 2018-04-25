@@ -12,8 +12,9 @@ if [ ! -d $HOME/.npm-global ]; then
 fi
 npm config set prefix '~/.npm-global'
 export PATH=~/.npm-global/bin:$PATH
-export PATH=~/.composer/vendor/bin:$PATH
-
+export PATH=~/.config/composer/vendor/bin:$PATH
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 source $HOME/.configus/aliases.zsh
 source $HOME/.configus/functions.zsh
@@ -47,3 +48,4 @@ antigen theme wezm+
 
 # Tell Antigen that you're done.
 antigen apply
+PROMPT='%T '$PROMPT
