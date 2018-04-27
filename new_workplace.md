@@ -12,7 +12,7 @@
 
 ## get develop applocations
 
-`yaourt -S php composer yarn nvm vim slack-desktop docker docker-compose visual-studio-code-bin --noconfirm`
+`yaourt -S php composer yarn nvm vim slack-desktop docker docker-compose visual-studio-code-bin postman --noconfirm`
 
 ## change default shell
 
