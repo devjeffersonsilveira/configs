@@ -5,12 +5,14 @@ if [ ! -f $HOME/.configus/.zsh_plugins/antigen.zsh ]; then
     if [ ! -d $HOME/.configus/.zsh_plugins ]; then
         mkdir -p $HOME/.configus/.zsh_plugins
     fi
-    curl -L git.io/antigen > $HOME/.configus/.zsh_plugins/antigen.zsh
+    curl -L git.io/antigen >$HOME/.configus/.zsh_plugins/antigen.zsh
 fi
 if [ ! -d $HOME/.npm-global ]; then
     mkdir -p $HOME/.npm-global
 fi
 npm config set prefix '~/.npm-global'
+eval $(go env)
+export PATH=$GOPATH/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 export PATH=~/.config/composer/vendor/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
@@ -37,7 +39,6 @@ antigen bundle npm
 antigen bundle pip
 antigen bundle python
 antigen bundle virtualenv
-
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
