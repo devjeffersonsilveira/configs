@@ -49,4 +49,7 @@ antigen theme wezm+
 
 # Tell Antigen that you're done.
 antigen apply
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 PROMPT='%T '$PROMPT
