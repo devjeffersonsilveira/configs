@@ -12,7 +12,7 @@
 
 ## get develop applocations
 
-`yaourt -S php composer yarn nvm vim slack-desktop docker docker-compose visual-studio-code-bin postman --noconfirm`
+`yaourt -S php composer yarn nvm vim slack-desktop pip docker docker-compose visual-studio-code-bin postman --noconfirm`
 
 ## change default shell
 
@@ -31,6 +31,10 @@
 `sudo systemctl disable lightdm`
 `sudo systemctl start gdm`
 `sudo systemctl stop lightdm`
+
+## install pip stuff
+
+`sudo pip install virtualenv`
 
 ## install composer global libs
 
