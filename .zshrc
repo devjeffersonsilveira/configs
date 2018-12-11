@@ -12,9 +12,12 @@ if [ ! -d $HOME/.npm-global ]; then
 fi
 npm config set prefix '~/.npm-global'
 eval $(go env)
+export PATH=~/.configus/bin:$PATH
+export PATH=~/.local/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 export PATH=~/.config/composer/vendor/bin:$PATH
+export PATH=~/.gem/ruby/2.5.0/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 

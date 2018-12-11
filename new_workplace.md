@@ -8,7 +8,7 @@
 
 ## get default applications
 
-`yaourt -S npm zsh guake gdm copyq spotify --noconfirm`
+`yaourt -S npm zsh fzf guake gdm copyq spotify --noconfirm`
 
 ## get develop applocations
 
