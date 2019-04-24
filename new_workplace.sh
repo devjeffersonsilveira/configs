@@ -32,3 +32,6 @@ sudo pip install virtualenv
 
 ## install composer global libs
 composer global require phpunit/phpunit:@stable friendsofphp/php-cs-fixer:@stable phpmd/phpmd:@stable squizlabs/php_codesniffer:@stable phpstan/phpstan:^0.9.2
+
+## add ;zshrc
+curl https://raw.githubusercontent.com/jalxes/configs/master/.zshrc -o ~/.zshrc
