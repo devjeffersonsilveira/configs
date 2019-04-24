@@ -7,7 +7,7 @@ sudo chmod 0700 .ssh
 visudo
 
 ## get default applications
-yaourt -S npm zsh fzf spotify --noconfirm
+yay -S npm zsh fzf spotify --noconfirm
 
 ## get develop applocations
 yay -S copyq php composer yarn nvm vim slack-desktop pip docker docker-compose visual-studio-code-bin postman --noconfirm
