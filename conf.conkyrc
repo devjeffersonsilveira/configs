@@ -1,0 +1,39 @@
+conky.config = {
+    alignment = 'bottom_middle',
+    background = false,
+    border_width = 1,
+    cpu_avg_samples = 2,
+    default_color = 'white',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_shades = false,
+    use_xft = true,
+    font = 'DejaVu Sans Mono:size=12',
+    gap_x = 0,
+    gap_y = 0,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_ncurses = false,
+    out_to_stderr = false,
+    out_to_x = true,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_argb_visual = false,
+    own_window_argb_value = 100,
+    own_window_type = 'panel',
+    update_interval = 5,
+}
+
+conky.text = [[
+${exec pacmd list-sources | grep -e "* index" -A 11 | grep -e "muted" | cut -c 2-}|\
+$kernel|\
+${color grey}CPU:$color $freq MHz $cpu% ${cpubar 4, 100}|\
+${color grey}RAM:$color $memperc% ${membar 4, 100}|\
+${color grey}Swap:$color $swapperc% ${swapbar 4, 100}|\
+${color lightgrey}\
+${top name 1}${top cpu 1}${top mem 1} ;\
+${top name 2}${top cpu 2}${top mem 2} ;\
+${top name 3}${top cpu 3}${top mem 3}
+]]

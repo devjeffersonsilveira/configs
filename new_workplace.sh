@@ -1,30 +1,33 @@
 #! bash
 
-## import configs from drive
+## import configs
 sudo chmod 0700 .ssh
 
 ## permissions
 visudo
 
 ## get default applications
-yay -S cronie cpupower baobab npm zsh fzf spotify --noconfirm
+yay -S cronie cpupower guake gnome-disk-utility baobab gnome-power-manager npm zsh fzf keepassxc --noconfirm
+yay -S spotify conky-manager2-git conky-lua-nv --noconfirm
 
 ## change default shell
 chsh -s /bin/zsh
 
 ## add user to groups
-sudo gpasswd -a jalxes audio
-sudo gpasswd -a jalxes video
+sudo gpasswd -a $USER audio
+sudo gpasswd -a $USER video
+
+## performance
+sudo echo "governor='performance'" >>/etc/default/cpupower
+sudo echo "vm.swappiness=10" >/etc/sysctl.d/99-swappiness.conf
 
 ## add .zshrc
 curl https://raw.githubusercontent.com/jalxes/configs/master/.zshrc -o ~/.zshrc
 
-
-
-## develop zone 
+## develop zone
 
 ## get develop applocations
-yay -S copyq php composer yarn nvm vim slack-desktop pip docker docker-compose visual-studio-code-bin postman --noconfirm
+yay -S clipit php composer go yarn nvm gvim pip docker docker-compose ferdi firefox-developer-edition --noconfirm
 
 ## add user to groups
 sudo gpasswd -a jalxes docker
@@ -36,10 +39,8 @@ sudo systemctl enable docker
 sudo pip install virtualenv
 
 ## install composer global libs
-composer global require phpunit/phpunit:@stable friendsofphp/php-cs-fixer:@stable phpmd/phpmd:@stable squizlabs/php_codesniffer:@stable phpstan/phpstan:^0.9.2
-
-
-
+composer global require phpunit/phpunit:@stable friendsofphp/php-cs-fixer:@stable phpmd/phpmd:@stable squizlabs/php_codesniffer:@stable phpstan/phpstan:@stable
+curl https://raw.githubusercontent.com/jalxes/configs/master/.php-cs -o ~/.php-cs
 
 ## Audio stuff
 
@@ -67,16 +68,16 @@ sherlock.lv2 qmidiarp
 ## loopers
 yay -S sooperlooper-git freewheeling
 
-## base apps for playing 
-yay -S hydrogen-git hydrogen-drumkits 
+## base apps for playing
+yay -S hydrogen-git hydrogen-drumkits
 yay -S drmr-git zita-at1 guitarix2 non-daw
 
-## learning 
+## learning
 yay -S musescore pianobooster
 
 ## plugins packs
-yay -S calf vee-one x42-plugins distrho-vst-git 
-yay -S ArtyFX 
+yay -S calf vee-one x42-plugins distrho-vst-git
+yay -S ArtyFX
 
-## synths 
+## synths
 yay -S aeolus setbfree zynaddsubfx yoshimi mda.lv2 helm bristol
