@@ -1,6 +1,6 @@
 if [ ! -d $HOME/.configus ]; then
     mkdir -p $HOME/.configus
-    curl https://raw.githubusercontent.com/jalxes/configs/master/.configus/aliases.zsh -o ~/.configus/.aliases.zsh
+    curl https://raw.githubusercontent.com/jalxes/configs/master/.configus/aliases.zsh -o ~/.configus/aliases.zsh
     curl https://raw.githubusercontent.com/jalxes/configs/master/.configus/functions.zsh -o ~/.configus/functions.zsh
 fi
 if [ ! -f $HOME/.configus/.zsh_plugins/antigen.zsh ]; then
@@ -9,19 +9,22 @@ if [ ! -f $HOME/.configus/.zsh_plugins/antigen.zsh ]; then
     fi
     curl -L git.io/antigen >$HOME/.configus/.zsh_plugins/antigen.zsh
 fi
-if [ ! -d $HOME/.npm-global ]; then
-    mkdir -p $HOME/.npm-global
-fi
-npm config set prefix '~/.npm-global'
-eval $(go env)
+
 export PATH=~/.configus/bin:$PATH
+export FZF_BASE=$(which fzf)
 export PATH=~/.local/bin:$PATH
-export PATH=$GOPATH/bin:$PATH
-export PATH=~/.npm-global/bin:$PATH
-export PATH=~/.config/composer/vendor/bin:$PATH
+
+# if [ ! -d $HOME/.npm-global ]; then
+#     mkdir -p $HOME/.npm-global
+# fi
+# npm config set prefix '~/.npm-global'
+# export PATH=~/.npm-global/bin:$PATH
+
+# eval $(go env)
+# export PATH=$GOPATH/bin:$PATH
+
+# export PATH=~/.config/composer/vendor/bin:$PATH
 # export PATH=~/.gem/ruby/2.5.0/bin:$PATH
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 source $HOME/.configus/aliases.zsh
 source $HOME/.configus/functions.zsh
@@ -31,19 +34,17 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-#antigen bundle heroku
-antigen bundle lein
+antigen bundle fzf
 antigen bundle command-not-found
 
 # Node Plugins
-# antigen bundle coffee
-# antigen bundle node
- antigen bundle npm
+# antigen bundle npm
+# antigen bundle yarn
 
 # Python Plugins
- antigen bundle pip
- antigen bundle python
- antigen bundle virtualenv
+#  antigen bundle pip
+#  antigen bundle python
+#  antigen bundle virtualenv
 
 function git_prompt_info() {
    # nop
@@ -64,7 +65,6 @@ antigen theme wezm+
 
 # Tell Antigen that you're done.
 antigen apply
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
 
 PROMPT='%T '$PROMPT
+

@@ -8,7 +8,7 @@ visudo
 
 ## get default applications
 yay -S cronie cpupower guake gnome-disk-utility baobab gnome-power-manager npm zsh fzf keepassxc --noconfirm
-yay -S spotify conky-manager2-git conky-lua-nv --noconfirm
+yay -S spotify conky-manager2-git conky-lua-nv xfce4-dockbarx-plugin --noconfirm
 
 ## change default shell
 chsh -s /bin/zsh
@@ -16,6 +16,9 @@ chsh -s /bin/zsh
 ## add user to groups
 sudo gpasswd -a $USER audio
 sudo gpasswd -a $USER video
+
+## change pulse default microphone
+pactl set-source-mute @DEFAULT_SOURCE@ toggle 
 
 ## performance
 sudo echo "governor='performance'" >>/etc/default/cpupower
@@ -27,7 +30,8 @@ curl https://raw.githubusercontent.com/jalxes/configs/master/.zshrc -o ~/.zshrc
 ## develop zone
 
 ## get develop applocations
-yay -S clipit php composer go yarn nvm gvim pip docker docker-compose ferdi firefox-developer-edition --noconfirm
+yay -S clipit php composer go yarn nvm gvim pip docker docker-compose firefox-developer-edition dbeaver --noconfirm
+yay -S slack-desktop rambox insomnia --noconfirm
 
 ## add user to groups
 sudo gpasswd -a jalxes docker
